@@ -1,7 +1,7 @@
 import click
 from operation import Operation
 
-
+operation=Operation()
 
 # group all commands
 @click.group()
@@ -11,7 +11,11 @@ def main():
 @main.command()
 @click.option('--path',prompt='Type desired path', required=True, type=str)
 def readdir(path):
-    Operation.read(path)
+    operation.read(path)
+
+@main.command()
+def list():
+    operation.listType()
 
 
 if __name__=="__main__":
