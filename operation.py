@@ -1,5 +1,4 @@
 import os
-from pprint import pprint
 from PyInquirer import Token, prompt, Separator
 from examples import custom_style_2
 
@@ -22,4 +21,5 @@ class Operation:
             },
         ]
         answers = prompt(questions, style=custom_style_2)
-        pprint(answers['type'].split('.'))
+        fileType =  answers['type'].split('.')
+        print(fileType)
