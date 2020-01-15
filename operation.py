@@ -20,11 +20,12 @@ class Operation:
                 'filter': lambda val: val.lower()
             },
         ]
-        answers = prompt(questions, style=custom_style_2)
-        fileType =  answers['type'].split('.')
-        print(fileType)
         if os.path.isdir(path):
+            answers = prompt(questions, style=custom_style_2)
+            fileTypeId =  answers['type'].split('.')
             files = os.listdir(path)
-            print(files)
+            if fileTypeId[0]=='1':
+                for f in files:
+                    print(f)
         else:
             print("Invalid directory path")
