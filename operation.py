@@ -23,3 +23,8 @@ class Operation:
         answers = prompt(questions, style=custom_style_2)
         fileType =  answers['type'].split('.')
         print(fileType)
+        if os.path.isdir(path):
+            files = os.listdir(path)
+            print(files)
+        else:
+            print("Invalid directory path")
