@@ -14,8 +14,9 @@ def readdir(path):
     operation.read(path)
 
 @main.command()
-def list():
-    operation.listType()
+@click.option('--path', prompt='Type desired path', required=True, type=str)
+def list(path):
+    operation.listType(path)
 
 
 if __name__=="__main__":

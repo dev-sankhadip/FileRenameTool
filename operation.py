@@ -10,7 +10,7 @@ class Operation:
         for f in files:
             print(f)
     
-    def listType(self):
+    def listType(self, path):
         questions = [
             {
                 'type': 'list',
