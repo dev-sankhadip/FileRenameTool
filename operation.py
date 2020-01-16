@@ -27,5 +27,14 @@ class Operation:
             if fileTypeId[0]=='1':
                 for f in files:
                     print(f)
+            elif fileTypeId[0]=='2':
+                allFile=[]
+                for f in files:
+                    allFile.append(path+'/'+f)
+                allFiles = sorted(allFile, key=os.path.getctime)
+                print(allFiles)
+                # for f in files:
+                #     path1 = path+"/"+f
+                #     print(os.path.getctime(path1))
         else:
             print("Invalid directory path")
