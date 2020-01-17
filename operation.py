@@ -32,9 +32,9 @@ class Operation:
                 for f in files:
                     allFile.append(path+'/'+f)
                 allFiles = sorted(allFile, key=os.path.getctime)
-                print(allFiles)
-                # for f in files:
-                #     path1 = path+"/"+f
-                #     print(os.path.getctime(path1))
+                for file in allFiles:
+                    fileArray = file.split('/')
+                    fileName = fileArray[len(fileArray)-1]
+                    print(fileName)
         else:
             print("Invalid directory path")
