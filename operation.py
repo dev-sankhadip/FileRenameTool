@@ -11,6 +11,8 @@ class Operation:
             print(f)
     
     def listType(self, path):
+
+        # questions to user
         questions = [
             {
                 'type': 'list',
@@ -20,13 +22,19 @@ class Operation:
                 'filter': lambda val: val.lower()
             },
         ]
+        # path should be directory
         if os.path.isdir(path):
             answers = prompt(questions, style=custom_style_2)
             fileTypeId =  answers['type'].split('.')
+            # get all files inside directory
             files = os.listdir(path)
+
+            # if choice is in alphabetical order
             if fileTypeId[0]=='1':
                 for f in files:
                     print(f)
+            
+            # if choice is in file creation time
             elif fileTypeId[0]=='2':
                 allFile=[]
                 for f in files:
@@ -36,5 +44,11 @@ class Operation:
                     fileArray = file.split('/')
                     fileName = fileArray[len(fileArray)-1]
                     print(fileName)
+            
+            # if choice is in file size
+            elif fileTypeId[0]=='3':
+                print("in file size")
+        
+        # if path is not directory
         else:
             print("Invalid directory path")
