@@ -20,6 +20,11 @@ def readdir(path):
 def list(path):
     operation.listType(path)
 
+# rename files in choice
+@main.command()
+@click.option('--path', prompt='Type desired path', required=True, type=str)
+def rename(path):
+    operation.rename()
 
 if __name__=="__main__":
     main()

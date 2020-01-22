@@ -11,7 +11,7 @@ class Operation:
             print(f)
     
     def listType(self, path):
-        # questions to user
+        # questions asked to user
         questions = [
             {
                 'type': 'list',
@@ -66,3 +66,6 @@ class Operation:
         fileArray = file.split('/')
         fileName = fileArray[len(fileArray)-1]
         return fileName
+    
+    def rename(path):
+        pass
